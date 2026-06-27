@@ -1,0 +1,63 @@
+# robots.txt for https://expireondate.com/
+# Goal: let Google (and friendly AI crawlers) index everything public.
+# Place this file at the site root: https://expireondate.com/robots.txt
+
+# ---- Default rule for all crawlers ----
+User-agent: *
+Allow: /
+# Block only private / non-content areas (none exist yet, listed for future use):
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /thank-you/
+Disallow: /account/
+Disallow: /private/
+Disallow: /staging/
+Disallow: /dev/
+# Avoid indexing duplicate, parameterized URLs (sorting/filtering/sessions):
+Disallow: /*?orderby=
+Disallow: /*?filter=
+Disallow: /*?sessionid=
+Disallow: /*?utm_
+
+# ---- Googlebot: full access to public content ----
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+
+# Do NOT block CSS / JS / images — Google needs them to render and rank the page.
+User-agent: Googlebot-Image
+Allow: /
+
+# ---- Google AI / assistant crawlers (help eligibility for AI Overviews) ----
+User-agent: Google-Extended
+Allow: /
+
+# ---- Other search + AI crawlers (allowed to aid citations/visibility) ----
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Pure training crawler — allowed by default. To opt out of AI training,
+# change the next line to "Disallow: /".
+User-agent: GPTBot
+Allow: /
+
+# ---- Sitemap ----
+Sitemap: https://expireondate.com/sitemap.xml
